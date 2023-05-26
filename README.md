@@ -21,6 +21,7 @@ La App de ToDoList se hizo para practicar mis habilidades, usé Styled-component
 - [x]  Responsive layout (mobile/tablet/desktop)
 - [x]  useContext
 - [x]  Local Storage
+- [x]  Estados de Loading, Error y vacio.
 - [ ]  Eliminar tarreas en mobile arrastrando
 
 ## Imagen del proyecto
