@@ -11,11 +11,9 @@ const SearchIcon = () => {
 }
 function ToDoSearch() {
     const { searchTerm, setSearchTerm } = React.useContext(ToDoContext)
-    const [inputValue, setInputValue] = React.useState("")
     
     return (
         <div
-        onMouseLeave={() => setSearchTerm('')}
         className={styles.todoInputWrapper}>
             <input
                 value={searchTerm}
@@ -23,7 +21,12 @@ function ToDoSearch() {
                 className={styles.todoInput}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <span className={styles.todoInputButton}><SearchIcon/></span>
+            <span className={searchTerm 
+                ? `${styles.todoInputButton} ${styles.todoInputButtonTrue}`
+                : `${styles.todoInputButton}`}            
+            >
+                    <SearchIcon/>
+            </span>
         </div>
     );
 }
