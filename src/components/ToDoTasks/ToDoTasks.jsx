@@ -2,14 +2,13 @@ import styles from './todotasks.module.css'
 import { ToDoContext } from '../../context'
 import React from 'react'
 
+const deleteIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className={styles.deleteIcon}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+)
 const ToDoTasks = function () {
-    const { handleDelete, handleCompleted, searchTasks } = React.useContext(ToDoContext)
-
-    const deleteIcon = (
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className={styles.deleteIcon}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    )
+    const { handleDelete, handleCompleted, searchTasks } = React.useContext(ToDoContext)   
 
     const CompleteIcon = ({completed}) => {
         return (

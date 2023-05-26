@@ -3,6 +3,7 @@ import ToDoTasks from "../ToDoTasks";
 import ToDoHeader from "../ToDoHeader/Index";
 import { styled } from "styled-components";
 import { ToDoContext } from "../../context";
+import ToDoTasksLoading from "../ToDoTasksLoading/ToDoTasksLoading";
 
 const ToDoWrapper = styled.div`
     display: flex;
@@ -22,12 +23,12 @@ const ToDo = function () {
     return ( 
         <ToDoWrapper>
             <ToDoHeader /> 
-            {status === 'loading' && <p>Loading...</p>}
+            {status === 'loading' && <ToDoTasksLoading />}
             {status === 'error' && <p>Error, algo salió mal</p>}
             {
                 status === 'success' &&
                 <>                               
-                    <ToDoTasks />
+                    <ToDoTasks/>
                 </>
             }
             

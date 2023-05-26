@@ -1,0 +1,99 @@
+@import '../../styles/variables.css';
+
+.tasksList {
+    padding: 0 0px;
+    width: 100%;
+    list-style: none;
+}
+
+.task {    
+    /*box-sizing: content-box;*/
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--catskill-white-50);
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 0 10px 0;
+    align-items: center;    
+    border-radius: 10px;
+    /*bg*/
+    background: rgb(234,240,244);
+    background: linear-gradient(90deg, rgba(234,240,244,1) 0%, rgba(245,248,250,1) 100%);
+    background-size: 400% 400%;
+    /*Animacion*/
+    animation: loadingAnimation 1s ease-in-out infinite;
+    /*Sombras*/
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);    
+}
+
+@keyframes loadingAnimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.taskSpan {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: white;
+    border: 2px solid var(--catskill-white-100);
+}
+
+.taskP {
+    overflow: auto;
+    height: 100%;   
+    padding: 0 20px;
+    color: var(--catskill-white-800);
+    flex: 1;
+}
+.taskDeleted {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--catskill-white-50);
+    border: 2px solid var(--catskill-white-100);
+}
+
+.taskCompleted {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-left: 5px;
+    background-color: var(--catskill-white-50);
+    border: 2px solid var(--catskill-white-100);
+}
+
+.deleteIcon {
+    width: 12px;
+    height: 12px;
+    color: var(--catskill-white-500);
+}
+
+.completeIcon{
+    width: 12px;
+    height: 12px;
+    color: var(--catskill-white-500);
+}
+
+@media (max-width:640px) {
+    .taskP {
+        font-size: 14px;
+    }
+}

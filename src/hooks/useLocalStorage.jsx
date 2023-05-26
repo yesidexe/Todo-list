@@ -24,7 +24,7 @@ export function useLocalStorage(itemName, initialValue) {
                 console.log(error)
                 setStatus('error')
             }
-        }, 1000)
+        }, 500)
     }, [])
 
     const saveItem = (newItem) => {
