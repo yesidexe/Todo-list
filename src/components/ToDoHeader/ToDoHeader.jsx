@@ -1,8 +1,8 @@
-import { styled } from 'styled-components';
-import ToDoInput from '../ToDoInput'
-import ToDoSearch from '../ToDoSearch'
-import { ToDoContext } from '../../context';
 import React from "react"
+import { styled } from 'styled-components';
+import { ToDoContext } from '../../context';
+import { ToDoSearch } from '../ToDoSearch';
+import ToDoInput from '../ToDoInput';
 
 const ToDoHeaderWrapper = styled.div`
     display: flex;

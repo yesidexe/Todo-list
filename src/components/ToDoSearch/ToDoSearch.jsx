@@ -25,4 +25,4 @@ function ToDoSearch() {
     );
 }
 
-export default ToDoSearch;
+export {ToDoSearch};

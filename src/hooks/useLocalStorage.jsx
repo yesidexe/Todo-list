@@ -14,11 +14,12 @@ export function useLocalStorage(itemName, initialValue) {
                 if (!localStorageItem) {
                     localStorage.setItem(itemName, JSON.stringify(initialValue));
                     parsedItem = initialValue;
+                    setStatus('idle')
                 } else {
                     parsedItem = JSON.parse(localStorageItem)
                     setItem(parsedItem)
-                }
-                setStatus('success')
+                    setStatus('success')
+                }                
             } catch (error) {
                 console.log(error)
                 setStatus('error')
