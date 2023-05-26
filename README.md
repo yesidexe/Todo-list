@@ -6,7 +6,7 @@ La App de ToDoList la hice para practicar mis habilidades, usé Styled-component
 
 ## Live demo
 
-> Proximamente
+> [Acá está, igual está en constante actualización](https://yesidexe.github.io/Todo-list/)
 > 
 
 ## **Tecnologias/recursos**
