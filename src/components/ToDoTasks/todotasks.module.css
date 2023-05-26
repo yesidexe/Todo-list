@@ -1,0 +1,102 @@
+@import '../../styles/variables.css';
+
+.tasksList {
+    padding: 0 0px;
+    width: 100%;
+    list-style: none;
+}
+
+.task {    
+    /*box-sizing: content-box;*/
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border: 2px solid var(--catskill-white-50);
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 0 0 10px 0;
+    align-items: center;    
+    border-radius: 10px;
+    /*Sombras*/
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.taskTrue{
+    /*bg gradient*/
+    background: rgb(245,248,250);
+    background: linear-gradient(90deg, rgba(245,248,250,1) 0%, rgba(234,240,244,1) 50%, rgba(245,248,250,1) 60%);
+}
+
+.taskSpan {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: white;
+    border: 2px solid var(--catskill-white-100);
+}
+
+.taskP {
+    overflow: auto;
+    height: 100%;   
+    padding: 0 20px;
+    color: var(--catskill-white-800);
+    flex: 1;
+}
+
+.taskPTrue{
+    text-decoration: line-through;
+}
+
+.taskDeleted {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--catskill-white-50);
+    border: 2px solid var(--catskill-white-100);
+}
+
+.taskCompleted {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-left: 5px;
+    background-color: var(--catskill-white-50);
+    border: 2px solid var(--catskill-white-100);
+}
+
+.taskCompletedTrue{
+    background-color: var(--catskill-white-800);
+}
+
+.deleteIcon {
+    width: 12px;
+    height: 12px;
+    color: var(--catskill-white-500);
+}
+
+.completeIcon{
+    width: 12px;
+    height: 12px;
+    color: var(--catskill-white-500);
+}
+
+.completedIconTrue{
+    color: white;
+}
+
+
+@media (max-width:640px) {
+    .taskP {
+        font-size: 14px;
+    }
+}

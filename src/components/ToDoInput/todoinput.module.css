@@ -1,0 +1,64 @@
+@import '../../styles/variables.css';
+
+.todoInputWrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.todoInput {
+    width: 0;
+    height: 50px;
+    padding: 0 22px;
+    font-size: 14px;
+    border: 2px solid var(--catskill-white-50);
+    color: var(--catskill-white-800);
+    outline: none;
+    border-radius: 50px;    
+    /*Sombras*/
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.todoInputButton {
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;    
+    font-size: 30px;  
+    border-radius: 100%;
+    color: var(--catskill-white-500);
+    background-color: white;
+    border: 2px solid var(--catskill-white-50);
+    /*Sombras*/
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.todoInputWrapper:hover .todoInput{  
+    width: 250px;
+}
+
+@media (max-width: 640px) {
+    .todoInput{
+        height: 40px;
+        font-size: 12px;
+        padding: 0 18px;
+    }
+
+    .todoInputButton{
+        width: 40px;
+        height: 40px;
+        font-size: 25px; 
+    }
+
+    .todoInputWrapper:hover .todoInput{  
+        width: 230px;
+    }
+}

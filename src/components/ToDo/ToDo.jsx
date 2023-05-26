@@ -1,20 +1,27 @@
 import React from "react";
-import ToDoInput from "../ToDoInput";
 import ToDoTasks from "../ToDoTasks";
+import ToDoHeader from "../ToDoHeader/Index";
+import { styled } from "styled-components";
 
-const ToDo = function () {
-    const [task, setTask] = React.useState([])
+const ToDoWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    gap:30px;
 
-    const handleSubmitTask = (inputTask)=>{
-        const newTasks = [...task, inputTask]
-        setTask(newTasks)
+    @media (max-width: 640px) {
+        width: 300px;
+        gap: 20px;
     }
+`
+const ToDo = function () {
 
     return ( 
-        <div className="todo-wrapper">
-            <ToDoInput handleSubmitTask={handleSubmitTask}/>
-            <ToDoTasks task={task} setTask={setTask}/>
-        </div>
+        <ToDoWrapper>
+            <ToDoHeader />            
+            <ToDoTasks />
+        </ToDoWrapper>
     );
 }
 

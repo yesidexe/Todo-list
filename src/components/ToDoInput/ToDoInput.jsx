@@ -1,29 +1,21 @@
 import React from "react"
+import styles from "./todoinput.module.css"
+import { ToDoContext } from "../../context";
 
-const ToDoInput = function ({handleSubmitTask}) {
-    const [inputTask, setInputTask] = React.useState('')
-
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        handleSubmitTask(inputTask)
-        setInputTask('')        
-    }
-
-    const handleChange = (e)=>{
-        setInputTask(e.target.value)
-    }
-
+const ToDoInput = function () {
+    const { handleSubmit, inputTask, setInputTask } = React.useContext(ToDoContext)
+    
     return (
-        <form className="todo-input-wrapper"
+        <form className={styles.todoInputWrapper}
             onSubmit={handleSubmit}
         >
             <input
                 placeholder="Write a task"
-                className="todo-input"
+                className={styles.todoInput}
                 value={inputTask}
-                onChange={handleChange}
+                onChange={(e)=>setInputTask(e.target.value)}
             />
-            <button type="submit">+</button>
+            <span className={styles.todoInputButton}>+</span>
         </form>
     );
 }
