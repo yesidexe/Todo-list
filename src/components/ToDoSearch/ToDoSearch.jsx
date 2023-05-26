@@ -11,9 +11,12 @@ const SearchIcon = () => {
 }
 function ToDoSearch() {
     const { searchTerm, setSearchTerm } = React.useContext(ToDoContext)
-
+    const [inputValue, setInputValue] = React.useState("")
+    
     return (
-        <div className={styles.todoInputWrapper}>
+        <div
+        onMouseLeave={() => setSearchTerm('')}
+        className={styles.todoInputWrapper}>
             <input
                 value={searchTerm}
                 placeholder="Search a task"
