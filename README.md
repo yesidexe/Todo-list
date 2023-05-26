@@ -1,6 +1,6 @@
 # ToDo-List App
 
-La App de ToDoList la hice para practicar mis habilidades, usé Styled-components en algunos lados para aprender de esta libreria, tambien usé CSS modules para igualmente practicar el tema de los modulos, y mejoré la app gracias a un curso de React de [Platzi](https://platzi.com/cursos/react/) en el cual realizaban este proyecto, que me sirvió para agregar un input para buscar las tareas, agregar un loading, aprender de ReactContext y otras cosas más.
+La App de ToDoList la hice para practicar mis habilidades, usé Styled-components en algunos lados para aprender de esta libreria, tambien usé CSS modules para igualmente practicar el tema de los modulos, y mejoré la app gracias a un curso de React de [Platzi](https://platzi.com/cursos/react/) en el cual realizaban este proyecto, que me sirvió para agregar un input para buscar las tareas, agregar un loading, aprender de usectContext, localStorage y otras cosas más.
 > 👷‍♂️ Sigue en desarrollo constante.
 > 
 
