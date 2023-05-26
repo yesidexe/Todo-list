@@ -43,7 +43,7 @@ function ToDoHeader() {
         <ToDoHeaderWrapper>
             <Inputs>
                 <ToDoInput/>
-                <ToDoSearch />
+                <ToDoSearch/>
             </Inputs>
             <TodoCounter className='todo-counter'>
                 <PCounter>
