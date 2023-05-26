@@ -49,6 +49,7 @@ function ToDoProvider({children}){
         <ToDoContext.Provider value={{
             tasks,
             saveTasks,
+            status,
             searchTasks,
             setInputTask,
             handleSubmitTask,

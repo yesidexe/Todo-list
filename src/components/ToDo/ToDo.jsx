@@ -2,6 +2,7 @@ import React from "react";
 import ToDoTasks from "../ToDoTasks";
 import ToDoHeader from "../ToDoHeader/Index";
 import { styled } from "styled-components";
+import { ToDoContext } from "../../context";
 
 const ToDoWrapper = styled.div`
     display: flex;
@@ -16,11 +17,20 @@ const ToDoWrapper = styled.div`
     }
 `
 const ToDo = function () {
+    const { status } = React.useContext(ToDoContext)
 
     return ( 
         <ToDoWrapper>
-            <ToDoHeader />            
-            <ToDoTasks />
+            <ToDoHeader /> 
+            {status === 'loading' && <p>Loading...</p>}
+            {status === 'error' && <p>Error, algo salió mal</p>}
+            {
+                status === 'success' &&
+                <>                               
+                    <ToDoTasks />
+                </>
+            }
+            
         </ToDoWrapper>
     );
 }
