@@ -1,7 +1,7 @@
 import React from "react"
 import { styled } from 'styled-components';
 import { ToDoContext } from '../../context';
-import { ToDoSearch } from '../ToDoSearch';
+import { ToDoSearch } from '../ToDoSearch/ToDoSearch';
 import ToDoInput from '../ToDoInput';
 
 const ToDoHeaderWrapper = styled.div`
