@@ -25,4 +25,4 @@ La App de ToDoList se hizo para practicar mis habilidades, usé Styled-component
 
 ## Imagen del proyecto
 
-![project image](./docs/project-image.png)
+![project image](./docs/project-image.JPG)
