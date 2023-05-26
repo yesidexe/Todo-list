@@ -35,7 +35,6 @@ const PCounter = styled.p`
         font-size: 12px;
     }
 `
-
 function ToDoHeader() {
     const { tasks } = React.useContext(ToDoContext)
     const completedTasks = tasks.filter((task) => task.completed)
