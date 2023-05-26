@@ -17,14 +17,25 @@ const ToDoWrapper = styled.div`
         gap: 20px;
     }
 `
+const AlertP = styled.p`
+    @import '../../styles/variables.css';
+
+    color: var(--catskill-white-800);
+
+    @media (max-width: 640px) {
+        font-size: 12px;
+    }
+`
+
 const ToDo = function () {
-    const { status } = React.useContext(ToDoContext)
+    const { status, tasks } = React.useContext(ToDoContext)
 
     return ( 
         <ToDoWrapper>
             <ToDoHeader /> 
             {status === 'loading' && <ToDoTasksLoading />}
-            {status === 'error' && <p>Error, algo salió mal</p>}
+            {status === 'error' && <AlertP>Error, algo salió mal</AlertP>}
+            {(status === 'success' && tasks<=0) && <AlertP>Create your first task!</AlertP> }
             {
                 status === 'success' &&
                 <>                               
