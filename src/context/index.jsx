@@ -19,11 +19,15 @@ function ToDoProvider({children}){
     })
 
     const handleSubmitTask = (inputTask)=>{
-        const newTask = {
-            text: inputTask,
-            completed: false,
-        }
-        saveTasks([...tasks, newTask])
+        const validar = tasks.some((task) => task.text === inputTask)
+        if(!validar){
+            const newTask = {
+                text: inputTask,
+                completed: false,
+            }
+
+            saveTasks([...tasks, newTask])
+        }        
     }
 
     const handleSubmit = (e)=>{
@@ -36,10 +40,10 @@ function ToDoProvider({children}){
         saveTasks(tasks.filter((_,i) => index !== i))
     }
 
-    const handleCompleted = (index)=>{
+    const handleCompleted = (text)=>{
         const newTasks = [...tasks]
-        const taskIndex = newTasks.findIndex((_,i) => {
-            return index === i
+        const taskIndex = newTasks.findIndex((tas) => {
+            return tas.text === text
         });        
         newTasks[taskIndex].completed = !newTasks[taskIndex].completed;
         saveTasks(newTasks)

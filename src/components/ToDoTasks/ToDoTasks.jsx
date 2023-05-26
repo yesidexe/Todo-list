@@ -33,8 +33,11 @@ const ToDoTasks = function () {
                                 onClick={() => handleDelete(index)}>{deleteIcon}
                             </span>
                             <span 
-                                className={tas.completed ? `${styles.taskCompletedTrue} ${styles.taskCompleted}` : `${styles.taskCompleted}`}
-                                onClick={() => handleCompleted(index)}><CompleteIcon completed={tas.completed}/>
+                                className={
+                                    tas.completed 
+                                    ? `${styles.taskCompletedTrue} ${styles.taskCompleted}` 
+                                    : `${styles.taskCompleted}`}
+                                onClick={() => handleCompleted(tas.text)}><CompleteIcon completed={tas.completed}/>
                             </span>
                         </li>
                     )
