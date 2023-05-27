@@ -3,13 +3,13 @@ import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ToDoContext = React.createContext();
 
-function ToDoProvider({children}){
-    /*El use del Local Storage está en la carpeta hooks*/    
+function ToDoProvider({ children }) {
+    /*El use del Local Storage está en la carpeta hooks*/
     //const [tasks, saveTasks] = React.useState(parsedTasks)
-    const [saveTasks, tasks, status] = useLocalStorage('Tasks',[])
+    const [saveTasks, tasks, status] = useLocalStorage('Tasks', [])
     const [searchTerm, setSearchTerm] = React.useState('')
-    const [inputTask, setInputTask] = React.useState('')  
-    
+    const [inputTask, setInputTask] = React.useState('')
+
     console.log(status)
 
     const searchTasks = tasks.filter((tas) => {
@@ -18,38 +18,43 @@ function ToDoProvider({children}){
         )
     })
 
-    const handleSubmitTask = (inputTask)=>{
-        const validar = tasks.some((task) => task.text === inputTask)
-        if(!validar){
+    const handleSubmitTask = (inputTask) => {
+        const validar = tasks.some((task) => task.text.toLowerCase() === inputTask.toLowerCase())
+        if (!validar) {
             const newTask = {
                 text: inputTask,
                 completed: false,
-            }
-
+        }
             saveTasks([...tasks, newTask])
-        }        
+        }else{
+            console.log("Esa palabra ya existe")
+        }
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
-        handleSubmitTask(inputTask)
-        setInputTask('')        
+        if (inputTask.trim()===""){            
+            console.log("ingresaste un valor vacio")            
+        }else{
+            handleSubmitTask(inputTask.trim())
+            setInputTask('')
+        }
     }
 
     const handleDelete = (index) => {
-        saveTasks(tasks.filter((_,i) => index !== i))
+        saveTasks(tasks.filter((_, i) => index !== i))
     }
 
-    const handleCompleted = (text)=>{
+    const handleCompleted = (text) => {
         const newTasks = [...tasks]
         const taskIndex = newTasks.findIndex((tas) => {
             return tas.text === text
-        });        
+        });
         newTasks[taskIndex].completed = !newTasks[taskIndex].completed;
         saveTasks(newTasks)
     }
-    
-    return(
+
+    return (
         <ToDoContext.Provider value={{
             tasks,
             saveTasks,
@@ -70,4 +75,4 @@ function ToDoProvider({children}){
     )
 }
 
-export {ToDoContext,ToDoProvider};
+export { ToDoContext, ToDoProvider };
