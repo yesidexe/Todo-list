@@ -22,6 +22,7 @@ La App de ToDoList la hice para practicar mis habilidades, usé Styled-component
 - [x]  useContext
 - [x]  Local Storage
 - [x]  Estados de Loading, Error y vacio.
+- [ ]  Controlar el ingreso de tareas vacias
 - [ ]  Eliminar tarreas en mobile arrastrando
 
 ## Imagen del proyecto
